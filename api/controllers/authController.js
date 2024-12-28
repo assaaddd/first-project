@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import User from "../models/User.js";
+import { errorHanler } from '../utils/error.js';
 
 export const signUp = async (req, res, next) => {
     try {
@@ -26,6 +27,6 @@ export const signUp = async (req, res, next) => {
             .status(201)
             .json(newUser);
     } catch (err) {
-        res.status(500).json(err.message)
+        next(err)
     }
 }
