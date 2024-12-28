@@ -15,15 +15,6 @@ app.use(express.json());
 app.use('/api/user' , userRouter);
 app.use('/api/auth' , authRouter);
 
-app.listen(PORT , () => {
-    try{
-        console.log(`Listening to the port:${PORT}`);
-        connectToMongoDB()
-    }catch(err){
-        throw new Error(`Error in connecting to server:${err}`)
-    }
-});
-
 app.use((err, req, res, next) => {
     const statusCode = err?.statusCode || 500;
     const message = err?.message || 'Internal server error';
@@ -32,4 +23,13 @@ app.use((err, req, res, next) => {
         statusCode,
         message,
     })
+});
+
+app.listen(PORT , () => {
+    try{
+        console.log(`Listening to the port:${PORT}`);
+        connectToMongoDB()
+    }catch(err){
+        throw new Error(`Error in connecting to server:${err}`)
+    }
 });
