@@ -2,12 +2,14 @@ import express from 'express';
 import { configDotenv } from 'dotenv';
 
 import { connectToMongoDB } from './config/connectToMongoDb.js';
+import userRouter from "./routes/userRoute.js";
 
 configDotenv();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use('/api/user' , userRouter);
 
 app.listen(PORT , () => {
     try{
