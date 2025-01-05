@@ -19,7 +19,7 @@ const userSchema = new schema({
     },
     avatar: {
         type: String,
-        default: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fprofile-image&psig=AOvVaw0Lu2oJjve1-OKSqGkCYm88&ust=1735974905538000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOClqtGA2YoDFQAAAAAdAAAAABAE",
+        default: "https://play-lh.googleusercontent.com/UkusYnx9NMBTfPsjU2Qu9GkJXVjz3CqxnKeUNlwQf6FNgZy-V_nrK9GEP_JbhIpP15BU=w526-h296-rw",
     }
 },
 {
