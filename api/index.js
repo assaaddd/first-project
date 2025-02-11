@@ -2,11 +2,14 @@ import express from 'express';
 import { configDotenv } from 'dotenv';
 
 import connectToMongoDb from './config/connectToMongoDb.js';
+import userRouter from './routes/user_route.js';
 
 const app = express();
 const PORT = 3000;
 
-configDotenv()
+configDotenv();
+
+app.use('/api/user', userRouter);
 
 app.listen(PORT, () => {
     try {
@@ -15,4 +18,4 @@ app.listen(PORT, () => {
     } catch {
         console.log('Error in app listen');
     }
-})
+});
